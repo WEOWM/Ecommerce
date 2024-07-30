@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { IoChevronBackOutline, IoChevronForward } from "react-icons/io5";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
@@ -7,12 +7,13 @@ import Card from "./Card";
 const SlideCard = ({computer$office}) => {
     const prevRef = useRef(null)
     const nextRef = useRef(null)
-    
-   
+
+    const [isright, setIsright] = useState(false)
       
   return (
     <div className="flex justify-center items-center relative">
         <button
+          style={{display: isright ? "block" : "none"}}
           ref={prevRef}
           className="absolute left-12 z-50 cursor-pointer text-2xl  bg-[rgba(0,0,0,0.49)] w-[37px] h-[51px] rounded-[5px] flex justify-center items-center"
         >
@@ -67,6 +68,7 @@ const SlideCard = ({computer$office}) => {
         </SwiperSlide>        
       </Swiper>
         <button
+          onClick={()=>setIsright(true)}
           ref={nextRef}
           className="absolute right-12 z-50 cursor-pointer text-2xl  bg-[rgba(0,0,0,0.49)] w-[37px] h-[51px] rounded-[5px] flex justify- items-center  p-0 m-0 "
         >
