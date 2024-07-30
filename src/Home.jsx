@@ -1,5 +1,6 @@
 import React from 'react'
 import SlideCard from './SlideCard';
+import Card from './Card';
 
 const Home = () => {
     const computer$office = [
@@ -17,7 +18,7 @@ const Home = () => {
       ];
   return (
     <div>
-        <section className='grid grid-cols-1 w-full'>
+        <section className='w-1/2'>
             <SlideCard computer$office={computer$office} />
         </section>
       

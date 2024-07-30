@@ -2,11 +2,8 @@ import React from "react";
 
 const Card = ({ computer$office }) => {
   return (
-    // <div className="  border-2 border-red-500">
-    //   <div className="bg-[#FFF] rounded-md relative max-sm:top-10">
-    //     <div className="flex  gap-3">
     <>
-      <div className="border-2 border-red-600">
+      <div className="border w-fit px-4">
         <div className="flex w-full">
           <img
             loading="lazy"
@@ -36,9 +33,7 @@ const Card = ({ computer$office }) => {
         </div>
       </div>
     </>
-    //     </div>
-    //   </div>
-    // </div>
+
   );
 };
 

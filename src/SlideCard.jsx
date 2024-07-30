@@ -11,36 +11,33 @@ const SlideCard = ({computer$office}) => {
    
       
   return (
-    <div className="flex justify-center items-center gap-1">
-      <div>
+    <div className="flex justify-center items-center relative">
         <button
           ref={prevRef}
-          className=" cursor-pointer text-2xl  bg-[rgba(0,0,0,0.49)] w-[37px] h-[51px] rounded-[5px] flex justify-center items-center "
+          className="absolute left-12 z-50 cursor-pointer text-2xl  bg-[rgba(0,0,0,0.49)] w-[37px] h-[51px] rounded-[5px] flex justify-center items-center"
         >
           <IoChevronBackOutline />
         </button>
-      </div>
-
       <Swiper
-        breakpoints={{
-          375: {
-            slidesPerView: 2,
-            // spaceBetween: 5,
-          },
-          414: {
-            slidesPerView: 2,
-            // spaceBetween: 5,
-          },
-          640: {
-            slidesPerView: 1,
-          },
-          768: {
-            slidesPerView: 1,
-          },
-          1025: {
-            slidesPerView: 2,
-          },
-        }}
+        // breakpoints={{
+        //   375: {
+        //     slidesPerView: 2,
+        //     // spaceBetween: 5,
+        //   },
+        //   414: {
+        //     slidesPerView: 2,
+        //     // spaceBetween: 5,
+        //   },
+        //   640: {
+        //     slidesPerView: 1,
+        //   },
+        //   768: {
+        //     slidesPerView: 1,
+        //   },
+        //   1025: {
+        //     slidesPerView: 2,
+        //   },
+        // }}
         spaceBetween={30}
         navigation={true}
         loop={true}
@@ -54,25 +51,27 @@ const SlideCard = ({computer$office}) => {
           swiper.navigation.update();
         }}
         modules={[Navigation]}
-        className="mySwiper"
+        className="w-full"
       >
-        <SwiperSlide className="grid grid-cols-2">
+        <SwiperSlide className="w-fit">
+          <div className="w-full flex items-center justify-center gap-4">
           <Card computer$office={computer$office}/>
-        </SwiperSlide>
-        {/* <SwiperSlide className="grid grid-cols-2">
           <Card computer$office={computer$office}/>
-        </SwiperSlide> */}
-       
-        
+          </div>
+        </SwiperSlide>        
+        <SwiperSlide className="">
+          <div className="w-full flex items-center justify-center gap-4">
+          <Card computer$office={computer$office}/>
+          <Card computer$office={computer$office}/>
+          </div>
+        </SwiperSlide>        
       </Swiper>
-      <div>
         <button
           ref={nextRef}
-          className="cursor-pointer text-2xl  bg-[rgba(0,0,0,0.49)] w-[37px] h-[51px] rounded-[5px] flex justify- items-center  p-0 m-0 "
+          className="absolute right-12 z-50 cursor-pointer text-2xl  bg-[rgba(0,0,0,0.49)] w-[37px] h-[51px] rounded-[5px] flex justify- items-center  p-0 m-0 "
         >
           <IoChevronForward />
         </button>
-      </div>
     </div>
   );
 };
